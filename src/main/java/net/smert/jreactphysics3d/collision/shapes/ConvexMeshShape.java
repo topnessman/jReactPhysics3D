@@ -32,6 +32,7 @@ import java.util.Map;
 import net.smert.jreactphysics3d.configuration.Defaults;
 import net.smert.jreactphysics3d.mathematics.Matrix3x3;
 import net.smert.jreactphysics3d.mathematics.Vector3;
+import org.checkerframework.checker.initialization.qual.UnderInitialization;
 
 /**
  * This class represents a convex mesh shape. In order to create a convex mesh shape, you need to indicate the
@@ -119,7 +120,7 @@ public class ConvexMeshShape extends CollisionShape {
     }
 
     // Recompute the bounds of the mesh
-    private void recalculateBounds() {
+    private void recalculateBounds(@UnderInitialization ConvexMeshShape this) {
 
         maxBounds.zero();
         minBounds.zero();
