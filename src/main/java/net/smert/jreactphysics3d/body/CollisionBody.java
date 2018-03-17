@@ -28,6 +28,7 @@ import net.smert.jreactphysics3d.collision.shapes.AABB;
 import net.smert.jreactphysics3d.collision.shapes.CollisionShape;
 import net.smert.jreactphysics3d.engine.ContactManifoldListElement;
 import net.smert.jreactphysics3d.mathematics.Transform;
+import qual.*;
 
 /**
  * This class represents a body that is able to collide with others bodies. This class inherits from the Body class.
@@ -37,25 +38,25 @@ import net.smert.jreactphysics3d.mathematics.Transform;
 public class CollisionBody extends Body {
 
     // True if the body has moved during the last frame
-    protected boolean hasMoved;
+    protected @Assignable boolean hasMoved;
 
     // True if the body can collide with others bodies
-    protected boolean isCollisionEnabled;
+    protected @Assignable boolean isCollisionEnabled;
 
     // True if the body is able to move
-    protected boolean isMotionEnabled;
+    protected @Assignable boolean isMotionEnabled;
 
     // Interpolation factor used for the state interpolation
-    protected float interpolationFactor;
+    protected @Assignable float interpolationFactor;
 
     // AABB for Broad-Phase collision detection
-    protected final AABB aabb;
+    protected @Assignable final AABB aabb;
 
     // Collision shape of the body
-    protected CollisionShape collisionShape;
+    protected @Assignable CollisionShape collisionShape;
 
     // First element of the linked list of contact manifolds involving this body
-    protected ContactManifoldListElement contactManifoldsList;
+    protected @Assignable ContactManifoldListElement contactManifoldsList;
 
     // Last position and orientation of the body
     protected final Transform oldTransform;

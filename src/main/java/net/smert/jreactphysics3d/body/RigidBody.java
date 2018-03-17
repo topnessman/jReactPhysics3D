@@ -31,7 +31,7 @@ import net.smert.jreactphysics3d.engine.Material;
 import net.smert.jreactphysics3d.mathematics.Matrix3x3;
 import net.smert.jreactphysics3d.mathematics.Transform;
 import net.smert.jreactphysics3d.mathematics.Vector3;
-
+import qual.*;
 /**
  * This class represents a rigid body of the physics engine. A rigid body is a non-deformable body that has a constant
  * mass. This class inherits from the CollisionBody class.
@@ -41,23 +41,23 @@ import net.smert.jreactphysics3d.mathematics.Vector3;
 public class RigidBody extends CollisionBody {
 
     // True if the gravity needs to be applied to this rigid body
-    protected boolean isGravityEnabled;
+    protected @Assignable boolean isGravityEnabled;
 
     // Angular velocity damping factor
-    protected float angularDamping;
+    protected @Assignable float angularDamping;
 
     // Linear velocity damping factor
-    protected float linearDamping;
+    protected @Assignable float linearDamping;
 
     // TODO: Remove the mass variable (duplicate with inverseMass)
     // Mass of the body
-    protected float mass;
+    protected @Assignable float mass;
 
     // Inverse of the mass of the body
-    protected float massInverse;
+    protected @Assignable float massInverse;
 
     // First element of the linked list of joints involving this body
-    protected JointListElement jointsList;
+    protected @Assignable JointListElement jointsList;
 
     // Angular velocity of the body
     protected final Vector3 angularVelocity;

@@ -24,6 +24,8 @@
  */
 package net.smert.jreactphysics3d.body;
 
+import qual.Assignable;
+
 /**
  * This class is an abstract class to represent a body of the physics engine.
  *
@@ -32,22 +34,22 @@ package net.smert.jreactphysics3d.body;
 public abstract class Body {
 
     // True if the body is active
-    protected boolean isActive;
+    protected @Assignable boolean isActive;
 
     // True if the body is allowed to go to sleep for better efficiency
-    protected boolean isAllowedToSleep;
+    protected @Assignable boolean isAllowedToSleep;
 
     // True if the body has already been added in an island (for sleeping technique)
-    protected boolean isAlreadyInIsland;
+    protected @Assignable boolean isAlreadyInIsland;
 
     // True if the body is sleeping (for sleeping technique)
-    protected boolean isSleeping;
+    protected @Assignable boolean isSleeping;
 
     // Elapsed time since the body velocity was bellow the sleep velocity
-    protected float sleepTime;
+    protected @Assignable float sleepTime;
 
     // Unique ID of the body
-    protected int bodyID;
+    protected @Assignable int bodyID;
 
     // Constructor
     public Body(int bodyID) {
